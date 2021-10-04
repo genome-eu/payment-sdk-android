@@ -84,13 +84,7 @@ internal class PaymentFragment: FragmentWithToolbar(R.layout.fragment_payment) {
                 (it.getSerializableExtra(Constants.Companion.Extra.PAY_INIT_DATA) as PayInitInfo).theme
         }
         registerReceiver()
-//        if (maxpayPaymentData.amount <= 0.0) //TODO removed  by customer
-//            viewModel.sendBroadcastResult(
-//                activity, GenomeResult(
-//                    GenomeResultStatus.ERROR,
-//                    resources.getString(R.string.error_zero_price)
-//                )
-//            )
+
         initUIElements()
         initThemeIfNeeded()
 

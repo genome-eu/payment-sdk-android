@@ -25,7 +25,6 @@
     <string name="payment_billing_country_placeholder">Placeholder</string>
     <string name="payment_pay_button_title">Betal nå</string>
     <string name="payment_terms_and_privacy_confirmation">Ved å klikke på Betal, godtar du våre Brukervilkår og retningslinjer for Personvern, samtidig som du bekrefter at du har lest dem nøye og fullstendig forstått innholdet. Det kan hende at du mottar e-postvarsler fra Genome og du kan melde deg av når som helst.</string>
-    <string name="maxpay_key">Genome</string>
     <string name="privacy_key">retningslinjer for Personvern</string>
     <string name="terms_key">Brukervilkår</string>
     <string name="payment_autodebit_confirmation">Jeg bekrefter at kortet mitt kan bli belastet automatisk hvis jeg kjøper et nytt produkt eller at en abonnementsbetaling er påkrevd</string>
