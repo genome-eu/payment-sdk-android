@@ -43,8 +43,6 @@ dependencies {
 }
 ```
 
-> **_NOTE:_** The SDK is distributed as a .m2repo, so adding the SDK to your own private Maven repository will also work.
-
 
 ## Integration with SDK
 
