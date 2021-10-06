@@ -1,7 +1,7 @@
 # Genome Payment Android SDK
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/genome-eu/payment-sdk-android?style=flat-square)
-![GitHub](https://img.shields.io/github/license/genome-eu/payment-sdk-android?style=flat-square)
+[![GitHub release](https://img.shields.io/github/v/release/genome-eu/payment-sdk-android?style=flat-square)](https://github.com/genome-eu/payment-sdk-android/releases)
+[![License](https://img.shields.io/github/license/genome-eu/payment-sdk-android?style=flat-square)](https://github.com/genome-eu/payment-sdk-android/blob/master/LICENSE)
 
 The Genome Payment Android SDK makes it quick and easy to build a payment screen in your Android app. We provide customizable SDKFacade that can be used out-of-the-box.
 
