@@ -5,9 +5,6 @@ import androidx.annotation.StringDef
 
 internal class Constants{
     companion object {
-
-        const val PROD_URL = "https://gateway.genome.eu/api/"
-        const val SANDBOX_URL = "https://gateway-sandbox.genome.eu/api/"
         const val PAY_CALLBACK_BROADCAST = "pay_callback_BROADCAST"
         const val PAY_CALLBACK_BROADCAST_SIGNATURE = "pay_signature_broadcast"
         const val PAY_BROAD_SIGNATURE_RES = "pay_signature_RES"
@@ -31,27 +28,6 @@ internal class Constants{
 
                 const val PAY_BROADCAST_DATA = "broadcast_data"
                 const val PAY_BROADCAST_SIGNATURE_DATA = "broadcast_signature_data"
-
-                const val CALLBACK_SIGNATURE = "callback_SIGNATURE"
-            }
-        }
-
-        @StringDef(Extra.PAY_INIT_DATA)
-        @Retention(AnnotationRetention.SOURCE)
-        annotation class Links {
-            companion object {
-                const val GENOME_CONTACT = "https://genome.eu/"
-                const val GENOME_PRIVACY = "https://genome.eu/privacy-policy.html"
-                const val GENOME_TERMS = "https://genome.eu/terms.html"
-            }
-        }
-
-        @StringDef(Token.ACCESS_TOKEN_KEY, Token.USER_ACCESS_TOKEN_KEY)
-        @Retention(AnnotationRetention.SOURCE)
-        annotation class Token {
-            companion object {
-                const val ACCESS_TOKEN_KEY = "access_token_key"
-                const val USER_ACCESS_TOKEN_KEY = "user_access_token_key"
             }
         }
 

@@ -54,9 +54,9 @@ internal class PaymentFragment: FragmentWithToolbar(R.layout.fragment_payment) {
         override fun onReceive(context: Context, intent: Intent) {
             when (intent.action) {
                 Constants.PAY_BROAD_SIGNATURE_RES -> {
-                    intent.getSerializableExtra(Constants.Companion.Extra.PAY_BROADCAST_SIGNATURE_DATA)
+                    intent.getStringExtra(Constants.Companion.Extra.PAY_BROADCAST_SIGNATURE_DATA)
                         ?.let {
-                            viewModel.pay(it as String)
+                            viewModel.pay(it)
                         } ?: kotlin.run {
                         viewModel.sendBroadcastResult(
                             activity, PayResult(
@@ -142,19 +142,19 @@ internal class PaymentFragment: FragmentWithToolbar(R.layout.fragment_payment) {
             Pair(resources.getString(R.string.terms_key), View.OnClickListener {
                 customTabs.launchUrl(
                     requireContext(),
-                    Uri.parse(Constants.Companion.Links.GENOME_TERMS)
+                    Uri.parse(getString(R.string.terms_url))
                 )
             }),
             Pair(resources.getString(R.string.privacy_key), View.OnClickListener {
                 customTabs.launchUrl(
                     requireContext(),
-                    Uri.parse(Constants.Companion.Links.GENOME_PRIVACY)
+                    Uri.parse(getString(R.string.privacy_url))
                 )
             }),
             Pair(resources.getString(R.string.genome_key), View.OnClickListener {
                 customTabs.launchUrl(
                     requireContext(),
-                    Uri.parse(Constants.Companion.Links.GENOME_CONTACT)
+                    Uri.parse(getString(R.string.contact_url))
                 )
             }),
             theme = payTheme
@@ -199,8 +199,7 @@ internal class PaymentFragment: FragmentWithToolbar(R.layout.fragment_payment) {
         editTextValidator.errorObservable
                          .observeOn(AndroidSchedulers.mainThread())
                          .subscribe {
-                             val isEnabled = !it && checkBoxAutoDebt.isChecked
-                                     && checkBoxTermsOfUse.isChecked
+                             val isEnabled = !it && checkBoxTermsOfUse.isChecked
                              payBtn?.isEnabled = isEnabled
                              themeEditor.changeButtonColorFilter(view, isEnabled)
                         }.addTo(uiDispose)

@@ -39,7 +39,7 @@ android {
 
 dependencies {
   // ...
-  implementation 'eu.genome.android:sdk-payment:1.0.0'
+  implementation 'eu.genome.android:sdk-payment:1.1.0'
 }
 ```
 

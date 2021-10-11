@@ -9,7 +9,6 @@ import eu.genome.sdk.payment.data.PayResult
 import eu.genome.sdk.payment.data.PayResultStatus
 import eu.genome.sdk.payment.model.PayInitInfo
 import eu.genome.sdk.payment.model.PayPaymentInfo
-import eu.genome.sdk.payment.model.PaySignatureInfo
 import eu.genome.sdk.payment.utils.Constants
 
 internal class SdkFacadeImpl private constructor() : SDKFacade {
@@ -35,10 +34,10 @@ internal class SdkFacadeImpl private constructor() : SDKFacade {
                         context.unregisterReceiver(this)
                     }
                     Constants.PAY_CALLBACK_BROADCAST_SIGNATURE -> {
-                        intent.getSerializableExtra(Constants.Companion.Extra.PAY_BROADCAST_SIGNATURE_DATA)
+                        intent.getStringExtra(Constants.Companion.Extra.PAY_BROADCAST_SIGNATURE_DATA)
                             ?.let {
-                                this@SdkFacadeImpl.checkoutCallBack?.onNeedCalculateSignature(it as? PaySignatureInfo) {
-                                    sendBroadcastData(context, it)
+                                this@SdkFacadeImpl.checkoutCallBack?.onNeedCalculateSignature(it) { signature ->
+                                    sendBroadcastData(context, signature)
                                 }
                             } ?: kotlin.run {
                             this@SdkFacadeImpl.checkoutCallBack?.onResponseResult(
